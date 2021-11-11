@@ -1,0 +1,28 @@
+.container {
+    cursor: pointer;
+    // display: flex;
+    // flex-direction: row;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(218, 218, 218, 0.5);
+    padding: 19px 0;
+}
+.lineContainer {
+    display: flex;
+    // justify-content: ;
+    .startLine {
+        color: #767676;
+        min-width: 55px;
+        display: inline-block;
+    }
+    .endLine {
+        margin-left: auto;
+        color: #767676;
+    }
+    .serviceName {
+        color: #fa835f;
+    }
+    .label {
+        margin-left: auto;
+    }
+}

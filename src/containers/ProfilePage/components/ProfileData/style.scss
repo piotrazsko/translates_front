@@ -1,0 +1,27 @@
+.infoContainer {
+    display: flex;
+    margin-bottom: 40px;
+    margin-top: 24px;
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-left: 20px;
+            font-family: Raleway;
+            margin-bottom: 16px;
+        }
+        .phone {
+            margin-left: 20px;
+            font-size: 16px;
+            .icon {
+                margin-right: 8px;
+                font-size: 18px;
+            }
+            display: flex;
+            align-items: center;
+        }
+    }
+}

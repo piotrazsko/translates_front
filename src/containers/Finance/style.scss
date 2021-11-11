@@ -1,0 +1,67 @@
+.grid {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-collapse: collapse;
+    .head {
+        color: #767676;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        .iconHeader {
+            font-size: 20px;
+            color: #000;
+            margin-right: 4px;
+        }
+    }
+    // border-collapse: separate;
+
+    .line {
+        margin: 5px 0;
+        padding: 16px 24px;
+        .cell {
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.03);
+            background: #ffffff;
+            text-align: center;
+            padding: 16px 24px;
+            &:first-child {
+                border-top-left-radius: 16px !important;
+                border-bottom-left-radius: 16px !important;
+            }
+            &:last-child {
+                border-top-right-radius: 16px !important;
+                border-bottom-right-radius: 16px !important;
+            }
+        }
+    }
+    .income {
+        color: #46a198;
+    }
+    .expenses {
+        color: #eb5757;
+    }
+}
+
+.spacer {
+    height: 16px;
+}
+.infoCardChildren {
+    margin-bottom: auto;
+}
+.infoBlockTitle {
+    display: none;
+}
+.commission {
+    font-family: Montserrat;
+    font-size: 11px;
+    color: #767676;
+    font-weight: 500;
+    text-align: right;
+}

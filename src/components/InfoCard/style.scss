@@ -1,0 +1,33 @@
+.container {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.03);
+    background-color: #fff;
+    border-radius: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        .title {
+            font-family: Raleway;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    }
+    .children {
+        // overflow-y: auto;
+        // max-height: 150px;
+    }
+    .menu {
+        margin-left: 15px;
+    }
+    .divider {
+        height: 1px;
+        background-color: rgba(218, 218, 218, 0.5);
+    }
+}

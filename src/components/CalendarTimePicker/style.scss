@@ -1,0 +1,53 @@
+@import 'src/assets/scss/endpoints.scss';
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+}
+.rightSideCalendar {
+    // height: calc(100% - 50px);
+
+    width: 340px;
+    max-width: 80vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    // background-color: red;
+}
+.item {
+    max-height: 20px;
+    flex-basis: 40px;
+    text-align: center;
+    border: 1px solid #fa835f;
+    padding: 5px;
+    margin: 3px 2px;
+    font-size: 12px;
+    border-radius: 8px;
+    line-height: 1.2;
+    &:hover {
+        background-color: rgb(227, 227, 227);
+    }
+    cursor: pointer;
+    &.selected {
+        color: #fff;
+        background-color: #fa835f;
+    }
+}
+.buttonContainer {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 5px;
+    height: 50px;
+    align-items: flex-end;
+}
+.calendarContainer {
+    flex-direction: column;
+}
+.placeholder {
+    color: #767676;
+    font-size: 0.8em;
+    margin-bottom: 8px;
+}

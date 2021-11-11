@@ -1,0 +1,58 @@
+.container {
+    margin-top: 0px !important;
+}
+.headerButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+.item {
+    display: flex;
+    margin: 21px 0 0 0;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 500;
+    justify-content: space-between;
+    padding-right: 5px;
+    .title {
+        margin-right: 20px;
+    }
+    .value {
+        color: #767676;
+    }
+}
+.images {
+    padding-top: 24px;
+    overflow: hidden;
+    display: flex;
+
+    .image {
+        height: 116px;
+        width: 116px;
+        border-radius: 12px;
+        margin-right: 16px;
+    }
+}
+.skeletonChildren {
+    margin: 0px !important;
+}
+.deeplink {
+    display: flex;
+    align-items: center;
+}
+.getLinkButton {
+    margin-left: 8px !important;
+}
+.deepLinkCard {
+    padding-top: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.deepLinkContainer {
+    min-height: 305px;
+    height: 305px;
+}
+.crms {
+    margin-top: 40px !important;
+}

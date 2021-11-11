@@ -1,0 +1,30 @@
+.durationContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 0;
+}
+.subTitle {
+    color: #767676;
+}
+.itemForm {
+    margin: 8px 0;
+}
+.itemFormLast {
+    margin: 26px 0 8px 0;
+}
+.buttonContainer {
+    // margin: 24px 0 0 0;
+    width: 100%;
+    padding: 10px 0 0 0;
+}
+.selectedItemsContainer {
+    margin-top: 24px;
+}
+.errorText {
+    color: #eb5757;
+    font-size: 12px;
+}
+.keySkillsContainer {
+    margin-top: 23px;
+}

@@ -1,0 +1,82 @@
+@import '../../assets/scss/endpoints.scss';
+$height: 80vmin;
+$width: 80vmin;
+$controlsColor: rgba(144, 144, 144, 0.6);
+.container {
+    background-color: #ffffff;
+    max-width: 80vw;
+    .childrenContainer {
+        max-width: $width;
+        max-height: 20vh;
+        overflow-y: auto;
+        border-top: 1px solid $controlsColor;
+        .pointerContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 3px;
+            .boldPointer {
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .pointer {
+                font-size: 10px;
+                color: $controlsColor;
+            }
+        }
+    }
+    .showImage {
+        height: $height;
+        min-width: $width;
+        background-color: #fff;
+        // position: absolute;
+
+        .imageContainer {
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 100%;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                font-size: 28px;
+                cursor: pointer;
+            }
+            .buttonArrow {
+                background-color: $controlsColor;
+                padding: 10px;
+                height: 30px;
+                width: 30px;
+                margin: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                border-radius: 100px;
+            }
+        }
+        .backgroundLine {
+            background-color: $controlsColor;
+        }
+        .controlls {
+            position: absolute;
+            width: $width;
+            height: 30px;
+            padding: 5px;
+            box-sizing: border-box;
+            .more {
+                color: white;
+                position: absolute;
+                right: 5px;
+                cursor: pointer;
+            }
+            .close {
+                color: white;
+                position: absolute;
+                right: -30px;
+
+                cursor: pointer;
+            }
+        }
+    }
+}

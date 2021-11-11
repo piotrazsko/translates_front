@@ -1,0 +1,193 @@
+.container {
+    overflow-y: auto;
+    max-height: calc(100vh - 145px);
+}
+.controllsContainer {
+    display: flex;
+    width: 100%;
+    margin-left: 40px;
+}
+.dataContainerSmall {
+    // min-height: 35vh;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+.infoCard {
+    margin-bottom: 0 !important;
+}
+.firstRowCell {
+    // top: 140px !important;
+}
+
+.children {
+    margin: 4px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0;
+}
+@mixin height {
+    height: 100%;
+    // max-width: 300px;
+    &:hover {
+        height: min-content;
+        z-index: 3;
+    }
+}
+.containerCell {
+    max-height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    @include height;
+}
+.imported {
+    background-color: #ffedbd !important;
+    @include height;
+    border: 0px !important;
+    .time {
+        color: #000 !important;
+    }
+    .title {
+        color: #000 !important;
+        font-weight: 600 !important;
+    }
+    .content {
+        color: #000 !important;
+    }
+    .name {
+        color: #000 !important;
+        // font-weight: 600 !important;
+    }
+}
+.finished {
+    background-color: #ededed !important;
+    color: #000 !important;
+    border: 0px !important;
+    @include height;
+
+    .time {
+        color: #000 !important;
+    }
+    .title {
+        color: #000 !important;
+        font-weight: 600 !important;
+    }
+    .content {
+        color: #000 !important;
+    }
+    .name {
+        color: #000 !important;
+        // font-weight: 600 !important;
+    }
+}
+
+.canceled {
+    background-color: #fce6e6 !important;
+    color: #eb5757 !important;
+    border: 0px !important;
+    @include height;
+
+    .time {
+        color: #eb5757 !important;
+    }
+    .title {
+        color: #eb5757 !important;
+        font-weight: 600 !important;
+    }
+    .content {
+        color: #eb5757 !important;
+    }
+    .name {
+        color: #eb5757 !important;
+        // font-weight: 600 !important;
+    }
+}
+.confirmed {
+    background-color: #e4faf7 !important;
+    font-size: 12px !important;
+    border: 0px !important;
+    color: #000 !important;
+    @include height;
+
+    .time {
+        color: #000 !important;
+    }
+    .title {
+        color: #000 !important;
+        font-weight: 600 !important;
+    }
+    .content {
+        color: #000 !important;
+    }
+    .name {
+        color: #000 !important;
+        // font-weight: 600 !important;
+    }
+}
+.request {
+    background-color: #fff !important;
+    @include height;
+
+    // border: px !important;
+    .time {
+        color: #000 !important;
+    }
+    .title {
+        color: #61c9be !important;
+        font-weight: 600 !important;
+    }
+    .content {
+        color: #000 !important;
+    }
+    .name {
+        color: #000 !important;
+        // font-weight: 600 !important;
+    }
+}
+.legend {
+    display: flex;
+    margin-top: auto;
+
+    .legendItem {
+        display: flex;
+        margin: 10px 0;
+        align-items: center;
+        font-size: 12px;
+        margin: 8px;
+        .roundConfirmed {
+            margin-right: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #e4faf7;
+            border-radius: 50%;
+        }
+        .roundFinished {
+            margin-right: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #ededed;
+            border-radius: 50%;
+        }
+        .roundCanceled {
+            margin-right: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #fce6e6;
+            border-radius: 50%;
+        }
+        .roundSync {
+            margin-right: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #ffedbd;
+            border-radius: 50%;
+        }
+        .disabledTime {
+            margin-right: 8px;
+            width: 16px;
+            border: 1px solid #767676;
+            height: 8px;
+            background-color: #ededed;
+            // border-radius: 50%;
+        }
+    }
+}

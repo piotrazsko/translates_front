@@ -1,0 +1,87 @@
+.container {
+    width: 100%;
+}
+
+.cellDay {
+    color: #767676;
+    user-select: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.dateCell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    &:hover {
+        background-color: rgba(119, 119, 119, 0.24) !important;
+    }
+}
+.selected {
+    width: 40px;
+    height: 40px;
+    background: #fa835f;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hightlighted {
+    width: 40px;
+    height: 40px;
+    background: #61c9be;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px !important;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    min-height: 63px;
+    &:hover {
+        background-color: #fff !important;
+    }
+    // height: 100%;
+}
+
+.dateCell {
+    // min-width: 40px !important;
+    // min-height: 40px !important;
+}
+
+.gridContainer {
+    grid-auto-rows: minmax(45px, 45px);
+    margin-top: 5px;
+    font-family: Montserrat;
+}
+.firstRow {
+    // background-color: #f6f6f6 !important;
+    border: none;
+    z-index: 3 !important;
+    top: 0;
+    text-align: center;
+}

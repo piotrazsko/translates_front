@@ -1,0 +1,48 @@
+.root {
+    &:hover {
+        background-color: inherit !important;
+    }
+    background-color: inherit !important;
+}
+.popoverFilter {
+    padding: 20px;
+    min-width: 60%;
+    justify-content: flex-end;
+    .inputs {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        .inputText {
+            width: 50%;
+            display: flex;
+            align-items: flex-end;
+            :global .MuiFormControl-marginNormal {
+                margin-bottom: 8px;
+            }
+        }
+        .selectFilter {
+            width: 50%;
+            display: flex;
+            align-items: flex-end;
+            :global .MuiFormControl-root {
+                width: 100%;
+                margin: 0 20px 8px 20px;
+            }
+        }
+    }
+    .findButtonContainer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.addButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+.chipsContainer {
+    margin: 0 20px;
+    .chips {
+        margin-right: 10px;
+    }
+}

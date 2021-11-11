@@ -1,0 +1,73 @@
+.salonData {
+    .avatar {
+        height: 60px;
+        width: 60px;
+        background-color: #fa835f;
+    }
+    .title {
+        color: #fff;
+        margin-top: 24px;
+        font-size: 16px;
+        text-align: center;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 32px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.iconSelected {
+    color: #fa835f !important;
+}
+.selectedItem {
+    display: flex !important;
+    .secondary {
+        display: inline-flex;
+        margin-left: auto;
+        margin-right: 16px;
+        align-items: center;
+    }
+    .borderAcrive {
+        display: block;
+        width: 4px;
+        height: 40px;
+        background-color: #fa835f;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+}
+.unselectedItem {
+    display: flex !important;
+    .borderAcrive {
+        display: block;
+        width: 4px;
+        height: 40px;
+        // background-color: #fa835f;
+    }
+}
+.item {
+    display: flex;
+    box-sizing: border-box;
+}
+.secondary {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 20px;
+    align-items: center;
+    color: '#fff';
+}
+
+.badge {
+    color: #fff !important;
+    background-color: #fa835f !important;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px !important;
+    min-width: 24px !important;
+    border-radius: 12px !important;
+}

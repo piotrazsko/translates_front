@@ -1,0 +1,13 @@
+.inputContainer {
+    padding: 20px 0;
+}
+.timepickers {
+    display: flex;
+    justify-content: space-between;
+    .timePicker {
+        flex-basis: 47%;
+    }
+}
+.inputAdornment {
+    margin-right: 6px;
+}

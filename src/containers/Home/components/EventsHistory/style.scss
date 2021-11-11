@@ -1,0 +1,50 @@
+.dataContainerSmall {
+    min-height: 333px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+}
+.containerEmpty {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    // margin: 0 20;
+}
+.headerContent {
+    color: #767676;
+    font-size: 12px;
+    margin-left: auto;
+}
+.title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-top: 40px;
+}
+.text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #767676;
+    margin-top: 12px;
+}
+.eventsContainer {
+    height: 100%;
+    max-height: 333px;
+    overflow-y: hidden;
+    &:hover {
+        overflow-y: auto;
+    }
+}

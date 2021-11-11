@@ -1,0 +1,53 @@
+.gridContainer {
+    height: 100%;
+    .infoContainer {
+        display: flex;
+        margin-bottom: 40px;
+        margin-top: 24px;
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .phone {
+                margin-left: 20px;
+                font-size: 16px;
+                .icon {
+                    font-size: 18px;
+                    margin-right: 8px;
+                }
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    .ordersInfo {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        .count {
+            font-weight: 600;
+        }
+    }
+}
+.buttonContainer {
+    margin-left: auto;
+}
+.subtitleContainer {
+    margin-bottom: 0px !important;
+}
+.skeletonChildren {
+    margin: 5px 0 !important;
+}
+.subtitle {
+    font-size: 12px;
+}
+.placeHolderContainer {
+    display: flex;
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+}
+.placeHolder {
+    font-size: 16px;
+    color: #767676;
+}

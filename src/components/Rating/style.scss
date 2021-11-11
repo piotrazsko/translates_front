@@ -1,0 +1,24 @@
+.additionalInfo {
+    // margin-left: 20px;
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 15px;
+
+    .rating {
+        margin: 0 3px;
+        line-height: 1;
+    }
+    .feedbacks {
+        margin: 0 15px 0 0px;
+        font-weight: 300;
+        line-height: 1;
+    }
+    .locationIcon {
+        font-size: 1.2em;
+        margin-right: 3px;
+    }
+}

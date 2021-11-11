@@ -1,0 +1,22 @@
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 60vh;
+
+    .emptyText {
+        font-size: 16px;
+        margin: 32px 10%;
+        text-align: center;
+        white-space: break-spaces;
+    }
+    .circle {
+        height: 160px;
+        width: 160px;
+        background-image: url('../../assets/img/feedbacks.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

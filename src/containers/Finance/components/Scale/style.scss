@@ -1,0 +1,65 @@
+.container {
+    margin-top: 0px !important;
+}
+.classNameChildren {
+    margin-top: auto;
+}
+.emptyScaleContainer {
+    margin: auto 0;
+    height: 100%;
+}
+.containerInfoCard {
+    height: 100%;
+}
+.headerContent {
+    color: #767676;
+    font-size: 12px;
+    margin-left: auto;
+}
+.scaleContainer {
+    margin-top: auto;
+}
+.dataContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px !important;
+}
+
+.title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-top: 40px;
+}
+.text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #767676;
+    margin-top: 12px;
+}
+.containerEmpty {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    // margin: 0 20;
+}
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px !important;
+}

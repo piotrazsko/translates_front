@@ -1,0 +1,39 @@
+.dataContainerSmall {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    // justify-content: center;
+    // align-items: center;
+}
+.table {
+    margin: 12px 0;
+}
+.tableHead {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #767676;
+}
+
+@mixin cell {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 8px 0;
+}
+.tableCell {
+    @include cell;
+    color: #767676;
+}
+.tableCellSumm {
+    @include cell;
+}

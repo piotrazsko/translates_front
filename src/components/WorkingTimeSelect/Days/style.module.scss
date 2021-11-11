@@ -1,0 +1,29 @@
+.circle {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    color: #fff;
+    border-radius: 50%;
+    background: rgba(250, 131, 95, 0.77);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+}
+.timeTag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15.7px;
+    background-color: #f8f8f8;
+    height: 32px;
+    margin: 10px 15px 3px 0;
+    .time {
+        height: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,23 @@
+.gridContainer {
+    height: calc(100vh - 210px);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .emptyText {
+        font-size: 16px;
+        margin: 32px 10%;
+        text-align: center;
+    }
+    .circle {
+        height: 160px;
+        width: 160px;
+        background-image: url('../../assets/img/feedbacks.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

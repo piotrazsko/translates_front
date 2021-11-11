@@ -1,0 +1,38 @@
+@import '../../../../assets/scss/endpoints.scss';
+
+.container {
+    // height: 80vh;
+    // width: 80vw;
+    // max-height: 80vh;
+    max-width: 80vw;
+    // padding: 30px;
+    border-radius: 16px !important;
+}
+.dataContainer {
+    // max-height: calc(570px - 125px) !important;
+    // height: calc(570px - 125px) !important;
+    // min-height: calc(570px - 125px) !important;
+    min-width: 30vw;
+}
+.topBlock {
+    position: sticky !important;
+    top: 0;
+    background: #fff;
+    padding: 2px 0;
+    z-index: 2;
+    .searchInput {
+    }
+    .closeButtonContainer {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        left: 30px;
+        top: -15px;
+        height: 2px;
+        @media (max-width: $md) {
+            left: 0;
+            top: 0;
+            // position: sticky;
+        }
+    }
+}
