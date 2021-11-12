@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { myPermissionsSelector } from 'modules/roles';
-import { getLocalizationSelector } from 'modules/localization';
 import * as helpers from 'helpers';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
 // import * as helpers from 'helpers';
@@ -40,14 +39,7 @@ export const useAutoScrollToTop = rest => {
         }
     }, [url]);
 };
-const LayoutEmpty = ({
-    myPermissionsSelector,
-    children,
-    viewPort,
-    currentLocalization,
-    classes = {},
-    ...rest
-}) => {
+const LayoutEmpty = ({ myPermissionsSelector, children, viewPort, classes = {}, ...rest }) => {
     const { isMobile } = viewPort;
     const dispatch = useDispatch();
     const {
@@ -65,7 +57,6 @@ const LayoutEmpty = ({
         permissions,
         viewPort,
         isEndOfPage,
-        currentLocalization,
         ...rest,
     };
 
@@ -114,6 +105,5 @@ LayoutEmpty.propTypes = {
 
 const mapStateToProps = state => ({
     myPermissionsSelector: myPermissionsSelector(state),
-    currentLocalization: getLocalizationSelector(state),
 });
 export default connect(mapStateToProps)(LayoutEmpty);

@@ -9,7 +9,6 @@ import { loaderReducer } from '../loader';
 import { cookiesReducer } from '../cookies';
 import viewport from 'modules/viewport';
 import { popupsReducer } from 'modules/popups';
-import { localizationReducer } from 'modules/localization';
 import { sidebarReducer } from 'modules/sidebar';
 
 const SetTransform = createTransform(inboundState => {
@@ -38,5 +37,4 @@ export default persistCombineReducers(persistConfig, {
     viewport,
     popups: popupsReducer,
     sidebar: sidebarReducer,
-    localization: localizationReducer,
 });

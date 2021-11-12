@@ -2,26 +2,11 @@
 import { all, put, select, delay, call } from 'redux-saga/effects';
 import * as apiHelpers from 'api';
 import { set, get } from 'lodash';
-import { showPopupAction } from 'modules/popups';
-import devConf from 'config/dev';
-import prodConf from 'config/prod';
 import { authSaga, getUserCredentials } from '../auth';
 import history from 'store/history';
 import { notificationSaga, showError, showSuccess } from '../notifications';
 import { loaderSaga, showLoader, hideLoader } from '../loader';
 import { initAction, initSaga } from '../init';
-import { skillsSaga } from '../skills';
-import { customSkillsSaga } from '../skills/customSkills.js';
-import { currentUserModuleSaga } from '../currentUser';
-import { salonSaga } from '../salon';
-import { chatSaga } from '../chat';
-import { masterSaga } from '../masters';
-import { clientSaga } from '../clients';
-import { localizationModuleSaga } from '../localization';
-import { workingTimeSaga } from '../working_time';
-import { eventsSaga } from '../events';
-import { tutorialModuleSaga } from '../tutorials';
-import { syncSaga } from '../upload_crm';
 
 // const config = process.env.NODE_ENV === 'development' ? devConf : prodConf;
 const {

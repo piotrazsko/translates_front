@@ -16,7 +16,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { getSidebarConfig } from 'modules/sidebar';
 import { useSelector } from 'react-redux';
-import AdminNavbarLinks from '../../containers/Header/AdminNavbarLinks';
 import sidebarStyle from 'assets/jss/material-dashboard-react/components/sidebarStyle';
 import style from './style.scss';
 import Avatar from '@material-ui/core/Avatar';
@@ -131,10 +130,6 @@ const Sidebar = ({ ...props }) => {
                     </Avatar>
 
                     <div>{title}</div>
-                    <div className={classes.sidebarWrapper}>
-                        <AdminNavbarLinks userLogout={props.userLogout} />
-                        {links}
-                    </div>
                 </Drawer>
             </Hidden>
             <Hidden smDown implementation="css">

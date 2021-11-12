@@ -5,8 +5,7 @@ import { bindActionCreators } from 'redux';
 import get from 'lodash/get';
 import { getTokenRequest, getCodeRequest, checkUserAuth, getCodeSelector } from 'modules/auth';
 import { useDispatch } from 'react-redux';
-import { getCurrentUserDataAction } from 'modules/currentUser';
-import { updateUserRequest, getUserRequest } from 'modules/user';
+
 import { showPopupAction } from 'modules/popups';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -21,10 +20,7 @@ const Auth = ({
     history,
     getTokenRequest,
     codeResponce: { code: smsCode, is_new, user_id, is_deleted },
-    updateUserRequest,
     showPopupAction,
-    getUserRequest,
-    getCurrentUserDataAction,
     match: {
         params: { path },
     },
@@ -49,116 +45,6 @@ const Auth = ({
         setTextError('');
     }, [path]);
 
-    const submitListener = (ev, step) => {
-        ev.preventDefault();
-        switch (step) {
-            case undefined: {
-                if (phone.length > 8) {
-                    getCodeRequest(phone.replace(/\D/g, ''), {
-                        postSaveToStoreCallback: () => {
-                            history.push('/auth/code');
-                        },
-                    });
-                } else {
-                    setTextError('Проверьте введенный номер телефона');
-                }
-                return;
-            }
-            case 'code': {
-                getTokenRequest(
-                    { phone: phone.replace(/\D/g, ''), code },
-                    {
-                        postSaveToStoreCallback: () => {
-                            getUserRequest(user_id, {
-                                postSaveToStoreCallback: data => {
-                                    const isAdmin = get(data, 'data.isAdmin');
-                                    const salonId = get(data, 'data.salonId');
-                                    switch (true) {
-                                        case Boolean(is_new):
-                                            history.push('/auth/registration');
-                                            return;
-                                        case !isAdmin: {
-                                            updateUserRequest(
-                                                {
-                                                    is_admin: true,
-                                                },
-                                                {
-                                                    postSaveToStoreCallback: () => {
-                                                        history.push('/init-profile');
-                                                    },
-                                                }
-                                            );
-                                            return;
-                                        }
-                                        case !salonId: {
-                                            history.push('/init-profile');
-                                            return;
-                                        }
-                                        default: {
-                                            getCurrentUserDataAction();
-                                            if (history.length > 100) {
-                                                history.go(-2); // TODO:  need check path
-                                                // history.push('/');
-                                            } else {
-                                                history.push('/');
-                                            }
-                                            return;
-                                        }
-                                    }
-                                },
-                            });
-                        },
-                    }
-                );
-                return;
-            }
-            case 'registration': {
-                if (firstName && lastName) {
-                    const is_admin = parseInt(userType) === 2;
-                    if (is_admin) {
-                        updateUserRequest(
-                            {
-                                is_master: Boolean(parseInt(userType) == 1),
-                                first_name: firstName,
-                                last_name: lastName,
-                                is_admin,
-                                email,
-                            },
-                            {
-                                postSaveToStoreCallback: data => {
-                                    const dataResponce = get(data, 'data', {});
-
-                                    if (!dataResponce.status) {
-                                        setTextError(dataResponce.message);
-                                    } else {
-                                        if (parseInt(userType) == 2) {
-                                            history.push('/init-profile');
-                                        } else {
-                                            history.push('/');
-                                        }
-                                    }
-                                },
-                            }
-                        );
-                    } else {
-                        window.location.replace('https://feelqueen.by/auth');
-                    }
-                } else {
-                    showPopupAction({
-                        message: 'Введите имя и фамилию',
-                        onClick: () => true,
-                        showCancel: false,
-                        confirmButtonProps: { size: 'small' },
-                    });
-                }
-
-                return;
-            }
-            default:
-                return;
-        }
-    };
-
     return (
         <div className={style.container}>
             <form
@@ -167,7 +53,6 @@ const Auth = ({
                 onSubmit={ev => {
                     // console.log('SUBMIT');
                     // ev.preventDefault();
-                    submitListener(ev, path);
                 }}
             >
                 {path !== 'registration' && (
@@ -290,24 +175,15 @@ Auth.propTypes = {
         user_id: PropTypes.string,
         is_new: PropTypes.number,
     }),
-    updateUserRequest: PropTypes.func.isRequired,
     showPopupAction: PropTypes.func.isRequired,
     match: PropTypes.shape({
         params: PropTypes.object,
     }),
-    currentLocalization: PropTypes.shape({
-        countryCode: PropTypes.string,
-    }),
-    getUserRequest: PropTypes.func,
-    getCurrentUserDataAction: PropTypes.func,
 };
 const mapDispatchToProps = dispatch => ({
     getTokenRequest: bindActionCreators(getTokenRequest, dispatch),
     getCodeRequest: bindActionCreators(getCodeRequest, dispatch),
-    updateUserRequest: bindActionCreators(updateUserRequest, dispatch),
     showPopupAction: bindActionCreators(showPopupAction, dispatch),
-    getUserRequest: bindActionCreators(getUserRequest, dispatch),
-    getCurrentUserDataAction: bindActionCreators(getCurrentUserDataAction, dispatch),
 });
 const mapStateToProps = state => ({
     codeResponce: getCodeSelector(state),

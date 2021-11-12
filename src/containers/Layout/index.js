@@ -3,12 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { useSelector, useDispatch } from 'react-redux';
-import { getSalonSelector } from 'modules/salon';
 import { myPermissionsSelector } from 'modules/roles';
-import { openChat } from 'modules/chat';
-import { setUserLogout } from 'modules/auth';
-import { checkUserMaster } from 'modules/currentUser';
-import { getLocalizationSelector } from 'modules/localization';
+
 import * as helpers from 'helpers';
 import dashboardStyle from 'assets/jss/material-dashboard-react/layouts/dashboardStyle';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
@@ -60,7 +56,6 @@ const Layout = ({
     ...rest
 }) => {
     const dispatch = useDispatch();
-    const { title = '', avatar } = useSelector(getSalonSelector);
     const {
         history,
         match: { path },
@@ -76,7 +71,6 @@ const Layout = ({
         permissions,
         viewPort,
         isEndOfPage,
-        currentLocalization,
         ...rest,
     };
 
@@ -109,11 +103,11 @@ const Layout = ({
     return (
         <div className={classes.wrapper}>
             <Sidebar
-                title={title}
+                title={'text'}
                 routes={[]}
-                logoText={((title && title[0]) || '').toUpperCase()}
+                logoText={'test_text'.toUpperCase()}
                 logo={logo}
-                image={avatar}
+                image={null}
                 onAvatarMenuClick={data => {}}
                 {...restWithPermissons}
             />
@@ -143,7 +137,5 @@ Layout.propTypes = {
 
 const mapStateToProps = state => ({
     myPermissionsSelector: myPermissionsSelector(state),
-    userIsMaster: checkUserMaster(state),
-    currentLocalization: getLocalizationSelector(state),
 });
 export default connect(mapStateToProps)(withStyles(dashboardStyle)(Layout));

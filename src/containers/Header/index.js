@@ -2,20 +2,15 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import { useDispatch } from 'react-redux';
 import withStyles from '@material-ui/core/styles/withStyles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Hidden from '@material-ui/core/Hidden';
-import Menu from '@material-ui/icons/Menu';
 import { HelpIcon } from 'feelqueen_components';
 // import {}
-import AdminNavbarLinks from './AdminNavbarLinks';
 
-import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import headerStyle from 'assets/jss/material-dashboard-react/components/headerStyle';
-import { switchOnTutorialAction } from 'modules/tutorials';
 import style from './style.scss';
 
 function Header({ showHelpButton = true, ...props }) {
@@ -44,25 +39,12 @@ function Header({ showHelpButton = true, ...props }) {
                         {makeBrand()}
                     </Button>
                 </div>
-                {/*<Hidden smDown implementation="css">
-                    <AdminNavbarLinks userLogout={props.userLogout} />
-                </Hidden>
-                <Hidden mdUp implementation="css">
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={props.handleDrawerToggle}
-                    >
-                        <Menu />
-                    </IconButton>
-                </Hidden>*/}
+
                 {showHelpButton && (
                     <Button
                         variant="outlined"
                         color="primary"
-                        onClick={() => {
-                            dispatch(switchOnTutorialAction());
-                        }}
+                        onClick={() => {}}
                         className={style.buttonWithIcon}
                     >
                         <HelpIcon width="20" />

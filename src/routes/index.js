@@ -1,5 +1,5 @@
 import { ROLES_KEYS } from 'config/roles';
-import { Home, RolesList, RoleEdit, AuthNew, Translates, Translate, LayoutEmpty } from 'containers';
+import { Home, AuthNew, Translates, Translate, LayoutEmpty } from 'containers';
 
 export const redirectAuthPath = '/auth';
 
@@ -16,31 +16,7 @@ const mainRoutes = [
         header: true,
         // layout: Tutorial,
     },
-    {
-        path: '/roles-list',
-        exact: true,
-        component: RolesList,
-        isPrivate: true,
-        header: true,
-        roleKey: ROLES_KEYS.roles,
-    },
-    {
-        path: '/role/:id',
-        exact: true,
-        component: RoleEdit,
-        isPrivate: true,
-        header: true,
-        roleKey: ROLES_KEYS.roles,
-    },
-    {
-        path: '/create-role',
-        exact: true,
-        component: RoleEdit,
-        isPrivate: true,
-        header: true,
-        isAdd: true,
-        roleKey: ROLES_KEYS.roles,
-    },
+
     {
         path: '/auth/:path?',
         component: AuthNew,
