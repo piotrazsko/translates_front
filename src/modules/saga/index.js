@@ -30,10 +30,11 @@ const {
 } = apiHelpers;
 
 if (process.env.NODE_ENV == 'development') {
-    init('https://apidev.feelqueen.by');
+    init('http://localhost:3001');
     // init('https://api.feelqueen.by');
 } else if (process.env.NODE_ENV == 'production') {
-    init('https://api.feelqueen.by');
+    init('http://localhost:3001');
+    // init('https://api.feelqueen.by');
 }
 
 // TODO:  need refactoring
@@ -112,18 +113,6 @@ function* rootSaga(dispatch) {
         notificationSaga(dispatch),
         loaderSaga(dispatch),
         authSaga(dispatch),
-        skillsSaga(dispatch),
-        currentUserModuleSaga(dispatch),
-        salonSaga(dispatch),
-        chatSaga(dispatch),
-        localizationModuleSaga(dispatch),
-        masterSaga(dispatch),
-        workingTimeSaga(dispatch),
-        clientSaga(dispatch),
-        eventsSaga(dispatch),
-        tutorialModuleSaga(dispatch),
-        customSkillsSaga(dispatch),
-        syncSaga(dispatch),
     ]);
 }
 

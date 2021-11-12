@@ -6,14 +6,12 @@ import * as apiHelpers from 'api';
 import notoficationReducer from '../notifications';
 import { authReducer } from '../auth';
 import { loaderReducer } from '../loader';
-import { currentUserReducer } from '../currentUser';
 import { cookiesReducer } from '../cookies';
 import viewport from 'modules/viewport';
 import { popupsReducer } from 'modules/popups';
 import { localizationReducer } from 'modules/localization';
 import { sidebarReducer } from 'modules/sidebar';
-import { skillsReducer } from 'modules/skills';
-import { tutorialsReducer } from '../tutorials';
+
 const SetTransform = createTransform(inboundState => {
     const { saveToPersist = true, ...state } = inboundState;
     return saveToPersist && { ...state };
@@ -36,12 +34,9 @@ export default persistCombineReducers(persistConfig, {
     notification: notoficationReducer,
     auth: authReducer,
     loader: loaderReducer,
-    currentUser: currentUserReducer,
     cookies: cookiesReducer,
     viewport,
     popups: popupsReducer,
     sidebar: sidebarReducer,
     localization: localizationReducer,
-    skills: skillsReducer,
-    tutorial: tutorialsReducer,
 });
