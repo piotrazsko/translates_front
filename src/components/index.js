@@ -1,40 +1,18 @@
 export { default as SideBar } from './Sidebar';
 export { default as Notifications } from './Notifications';
-export { default as Table } from './Table';
-export { default as AutocompleteSelect } from './AutocompleateSelect';
 export { default as PhoneInput } from './PhoneInput';
-export { default as Select, optionsPreparingSelect } from './Select';
-export { default as FormCore } from './FormCore';
-export { default as ConfirmationDialog } from './ConfirmationDialog';
-export { default as UserInfo } from './UserInfo';
+export { default as AutocompleteSelect } from './AutocompleateSelect';
 export { default as Popup } from './Popup';
-export { default as Crop } from './Crop';
-export { default as Dropzone } from './Dropzone';
-export { default as NumberFormat } from './NumberFormat';
-export { default as WorkingTimeSelect } from './WorkingTimeSelect';
-export { default as MatersItem } from './MasterItem';
-export { default as RatingLocation } from './RatingLocation';
-export { default as SkillItem } from './SkillItem';
-export { default as ShowImage } from './ShowImage';
-export { default as AddPhotoPopup } from './AddPhotoPopup';
-export { default as Skeleton } from './Skeleton';
-export { default as Rating } from './Rating';
-export { default as ImageUploadedItem } from './ImageUploadedItem';
-export { default as DatePicker } from './DatePicker';
-export { default as Calendar } from './DatePicker/Calendar';
-export { default as InfoCard } from './InfoCard';
-export { default as AddDataButton } from './AddDataButton';
-export { default as IncreasePicker } from './IncreasePicker';
-export { default as SelectSkillsPopup } from './SelectSkillsPopup';
-export { default as Label } from './Label';
-export { default as InfoCardLine } from './InfoCardLine';
-export { default as TimePicker } from './TimePicker';
-export { default as PagePlaceHolder } from './PagePlaceHolder';
-export { default as AddClientPopup } from './AddClientPopup';
-export { default as EventItem } from './EventItem';
-export { default as EventStatusLabel } from './EventStatusLabel';
-export { default as DownloadLink } from './DownloadLink';
-export { default as CalendarTimePicker } from './CalendarTimePicker';
+export { default as ConfirmationDialog } from './ConfirmationDialog';
 
-export * from './AutoCompleates';
+export { default as Table } from './Table';
+export { default as Select, optionsPreparingSelect } from './Select';
+
+export { default as FormCore } from './FormCore';
+export { default as Pane } from './Pane';
+
+export { default as Skeleton } from './Skeleton';
+
+export { default as PagePlaceHolder } from './PagePlaceHolder';
+export { default as DownloadLink } from './DownloadLink';
 export * from './CommonControlls';

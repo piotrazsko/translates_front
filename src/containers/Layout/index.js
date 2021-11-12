@@ -15,7 +15,6 @@ import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import logo from 'assets/img/logo.svg';
 import Header from '../Header';
 import Footer from 'components/Footer/Footer';
-import Tutorials from '../Tutotials';
 import Sidebar from 'components/Sidebar';
 import { layoutRenderedAction } from 'modules/init';
 // import * as helpers from 'helpers';
@@ -56,8 +55,6 @@ const Layout = ({
     myPermissionsSelector,
     children,
     viewPort,
-    userIsMaster,
-    currentUserData,
     currentLocalization,
     classes,
     ...rest
@@ -110,44 +107,27 @@ const Layout = ({
         };
     }, []);
     return (
-        <Tutorials {...restWithPermissons}>
-            <div className={classes.wrapper}>
-                <Sidebar
-                    title={title}
-                    routes={[]}
-                    logoText={((title && title[0]) || '').toUpperCase()}
-                    logo={logo}
-                    image={avatar}
-                    onAvatarMenuClick={data => {
-                        switch (data) {
-                            case 0:
-                                history.push('/profile/edit');
-                                return;
-                            case 1:
-                                dispatch(openChat(14094));
-                                return;
-                            case 2:
-                                dispatch(setUserLogout());
-                                history.push('/auth');
-                                return;
-                            default:
-                                return;
-                        }
-                    }}
-                    {...restWithPermissons}
-                />
-                <div className={classes.mainPanel}>
-                    {showHeader && <Header path={path} routes={[]} {...restWithPermissons} />}
-                    <div className={classes.content}>
-                        {(!roleKey || permissions.read) &&
-                        rest.route.isPrivate === rest.route.userIsAuth // we can have some problems with hide
-                            ? React.createElement(children, restWithPermissons)
-                            : null}
-                    </div>
-                    {showFooter && <Footer />}
+        <div className={classes.wrapper}>
+            <Sidebar
+                title={title}
+                routes={[]}
+                logoText={((title && title[0]) || '').toUpperCase()}
+                logo={logo}
+                image={avatar}
+                onAvatarMenuClick={data => {}}
+                {...restWithPermissons}
+            />
+            <div className={classes.mainPanel}>
+                {showHeader && <Header path={path} routes={[]} {...restWithPermissons} />}
+                <div className={classes.content}>
+                    {(!roleKey || permissions.read) &&
+                    rest.route.isPrivate === rest.route.userIsAuth // we can have some problems with hide
+                        ? React.createElement(children, restWithPermissons)
+                        : null}
                 </div>
+                {showFooter && <Footer />}
             </div>
-        </Tutorials>
+        </div>
     );
 };
 

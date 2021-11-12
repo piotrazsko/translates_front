@@ -5,9 +5,8 @@ export { default as Layout } from './Layout';
 export { default as Loader } from './Loader';
 export { default as RoleEdit } from './RoleEdit';
 export { default as AuthNew } from './AuthNew';
-export { default as Masters } from './Masters';
-export { default as Clients } from './Clients';
-export { default as ClientDetail } from './ClientDetail';
+export { default as Translates } from './Translates';
+export { default as Translate } from './Translate';
 export { default as LayoutEmpty } from './LayoutEmpty';
 
 // expor

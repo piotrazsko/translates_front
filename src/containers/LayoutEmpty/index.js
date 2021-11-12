@@ -2,20 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-    setSalonData,
-    getSalonSelector,
-    getSalonInfoSelector,
-    getSalonLocationSelector,
-} from 'modules/salon';
 import { myPermissionsSelector } from 'modules/roles';
-import { checkUserMaster } from 'modules/currentUser';
 import { getLocalizationSelector } from 'modules/localization';
 import * as helpers from 'helpers';
-import style from './style.scss';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
-import Navbar from '../Header';
-import MobileScreen from '../MobileScreen';
 // import * as helpers from 'helpers';
 
 // import theme from './theme.js';
@@ -54,15 +44,12 @@ const LayoutEmpty = ({
     myPermissionsSelector,
     children,
     viewPort,
-    userIsMaster,
-    currentUserData,
     currentLocalization,
     classes = {},
     ...rest
 }) => {
     const { isMobile } = viewPort;
     const dispatch = useDispatch();
-    const { title = '', avatar } = useSelector(getSalonSelector);
     const {
         history,
         match: { path },
@@ -107,15 +94,13 @@ const LayoutEmpty = ({
             window.removeEventListener('scroll', listener);
         };
     }, []);
-    return !isMobile ? (
+    return (
         <div>
             {(!roleKey || permissions.read) &&
             (rest.route.isPrivate === false || rest.route.isPrivate === rest.route.userIsAuth) // we can have some problems with hide
                 ? React.createElement(children, restWithPermissons)
                 : null}
         </div>
-    ) : (
-        <MobileScreen />
     );
 };
 
@@ -124,14 +109,11 @@ LayoutEmpty.propTypes = {
     viewPort: PropTypes.shape({ isMobile: PropTypes.bool.isRequired }).isRequired,
     children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
     myPermissionsSelector: PropTypes.object,
-    userIsMaster: PropTypes.bool.isRequired,
-    currentUserData: PropTypes.object.isRequired,
     currentLocalization: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
     myPermissionsSelector: myPermissionsSelector(state),
-    userIsMaster: checkUserMaster(state),
     currentLocalization: getLocalizationSelector(state),
 });
 export default connect(mapStateToProps)(LayoutEmpty);
